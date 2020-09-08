@@ -11,8 +11,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText etDolares, etEuros, etCambio;
+    private EditText etDolares, etEuros;
     private RadioButton rbDolar, rbEuro;
+    private TextView tvMostrar;
     private Button btConvetir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.conversor);
         etDolares= findViewById(R.id.etDolares);
         etEuros= findViewById(R.id.etEuros);
-        etCambio= findViewById(R.id.etCambio);
         rbDolar= findViewById(R.id.rbDolar);
         rbEuro= findViewById(R.id.rbEuro);
+        tvMostrar= findViewById(R.id.tvMostrar);
         btConvetir= findViewById(R.id.btConvertir);
     }
 
@@ -44,13 +45,13 @@ public class MainActivity extends AppCompatActivity {
         if(rbDolar.isChecked()){
             double euro= Double.parseDouble(etEuros.getText().toString());
             valor= euro * 1.18;
-            etCambio.setText(valor+"",TextView.BufferType.EDITABLE);
+            tvMostrar.setText(valor+"",TextView.BufferType.EDITABLE);
             etEuros.setText("");
         }
         if(rbEuro.isChecked()){
             double dolar= Double.parseDouble(etDolares.getText().toString());
             valor= dolar * 0.85;
-            etCambio.setText(valor+"",TextView.BufferType.EDITABLE);
+            tvMostrar.setText(valor+"",TextView.BufferType.EDITABLE);
             etDolares.setText("");
         }
     }

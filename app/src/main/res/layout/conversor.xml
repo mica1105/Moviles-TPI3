@@ -6,7 +6,7 @@
         android:id="@+id/tvDolares"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:autoSizeTextType="uniform"
+        android:textSize="20dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="24dp"
@@ -28,7 +28,7 @@
         android:id="@+id/tvEuros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:autoSizeTextType="uniform"
+        android:textSize="20dp"
         android:layout_alignLeft="@id/etDolares"
         android:layout_below="@id/etDolares"
         android:layout_marginTop="20dp"
@@ -72,32 +72,32 @@
         android:id="@+id/tvCambio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:autoSizeTextType="uniform"
+        android:textSize="20dp"
         android:layout_alignLeft="@id/radioGroup1"
         android:layout_below="@id/radioGroup1"
         android:layout_marginTop="20dp"
         android:text="Cambio a..." />
 
-    <EditText
-        android:id="@+id/etCambio"
+    <TextView
+        android:id="@+id/tvMostrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
         android:layout_alignLeft="@id/tvCambio"
         android:layout_below="@id/tvCambio"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:enabled="false"
-        android:inputType="numberDecimal"/>
+        android:layout_marginTop="12dp"/>
+
 
     <Button
         android:id="@+id/btConvertir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/etCambio"
-        android:layout_below="@id/etCambio"
-        android:layout_marginTop="12dp"
+        android:layout_alignLeft="@id/tvMostrar"
+        android:layout_below="@id/tvMostrar"
+        android:layout_marginTop="15dp"
         android:text="Convertir"
         android:onClick="convertir"/>
+
 
 
 </RelativeLayout>
