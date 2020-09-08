@@ -32,11 +32,13 @@ public class MainActivity extends AppCompatActivity {
             etDolares.setEnabled(false);
             etEuros.setEnabled(true);
             etEuros.requestFocus();
+            tvMostrar.setText("");
         }
         if (rbEuro.isChecked()){
             etEuros.setEnabled(false);
             etDolares.setEnabled(true);
             etDolares.requestFocus();
+            tvMostrar.setText("");
         }
     }
 
@@ -45,13 +47,13 @@ public class MainActivity extends AppCompatActivity {
         if(rbDolar.isChecked()){
             double euro= Double.parseDouble(etEuros.getText().toString());
             valor= euro * 1.18;
-            tvMostrar.setText(valor+"",TextView.BufferType.EDITABLE);
+            tvMostrar.setText(valor+" USD",TextView.BufferType.EDITABLE);
             etEuros.setText("");
         }
         if(rbEuro.isChecked()){
             double dolar= Double.parseDouble(etDolares.getText().toString());
             valor= dolar * 0.85;
-            tvMostrar.setText(valor+"",TextView.BufferType.EDITABLE);
+            tvMostrar.setText(valor+" EUR",TextView.BufferType.EDITABLE);
             etDolares.setText("");
         }
     }
