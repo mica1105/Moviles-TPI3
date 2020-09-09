@@ -31,13 +31,12 @@ public class MainActivity extends AppCompatActivity {
         if(rbDolar.isChecked()){
             etDolares.setEnabled(false);
             etEuros.setEnabled(true);
-            etEuros.requestFocus();
+            etEuros.requestFocusFromTouch();
             tvMostrar.setText("");
-        }
-        if (rbEuro.isChecked()){
+        } else {
             etEuros.setEnabled(false);
             etDolares.setEnabled(true);
-            etDolares.requestFocus();
+            etDolares.requestFocusFromTouch();
             tvMostrar.setText("");
         }
     }
@@ -47,13 +46,12 @@ public class MainActivity extends AppCompatActivity {
         if(rbDolar.isChecked()){
             double euro= Double.parseDouble(etEuros.getText().toString());
             valor= euro * 1.18;
-            tvMostrar.setText(valor+" USD",TextView.BufferType.EDITABLE);
+            tvMostrar.setText(valor+" USD");
             etEuros.setText("");
-        }
-        if(rbEuro.isChecked()){
+        } else {
             double dolar= Double.parseDouble(etDolares.getText().toString());
             valor= dolar * 0.85;
-            tvMostrar.setText(valor+" EUR",TextView.BufferType.EDITABLE);
+            tvMostrar.setText(valor+" EUR");
             etDolares.setText("");
         }
     }
